@@ -1,0 +1,8 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" rx="48" fill="#FCE7F3"/>
+  <rect x="100" y="110" width="200" height="200" rx="20" fill="#F9A8D4"/>
+  <rect x="130" y="140" width="140" height="140" rx="12" fill="#FFFFFF"/>
+  <path d="M160 180H240" stroke="#CC4B87" stroke-width="10" stroke-linecap="round"/>
+  <path d="M160 220H220" stroke="#CC4B87" stroke-width="10" stroke-linecap="round"/>
+  <text x="200" y="340" text-anchor="middle" font-size="36" font-family="Inter, sans-serif" fill="#7C2D5B">Books</text>
+</svg>

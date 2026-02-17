@@ -1,0 +1,7 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" rx="48" fill="#FCE7F3"/>
+  <path d="M140 110L200 80L260 110L300 170L250 200L240 340H160L150 200L100 170L140 110Z" fill="#F9A8D4"/>
+  <path d="M200 110C210 120 230 140 250 150" stroke="#CC4B87" stroke-width="10" stroke-linecap="round"/>
+  <path d="M200 110C190 120 170 140 150 150" stroke="#CC4B87" stroke-width="10" stroke-linecap="round"/>
+  <text x="200" y="360" text-anchor="middle" font-size="36" font-family="Inter, sans-serif" fill="#7C2D5B">Clothing</text>
+</svg>
