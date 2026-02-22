@@ -7,6 +7,16 @@ const Product = () => {
   const product = products.find((item) => item.slug === slug)
   const { addItem } = useCart()
   const navigate = useNavigate()
+  const detailVideoByName: Record<string, string> = {
+    kira: '/videos/kira.mp4',
+    kim: '/videos/kim.mp4',
+    tara: '/videos/Tara.mp4',
+    bella: '/videos/Bella.mp4',
+    anna: '/videos/Anna.mp4',
+    saira: '/videos/Saira.mp4',
+  }
+  const detailVideoSrc = product ? detailVideoByName[product.name.toLowerCase()] : undefined
+  const isKim = product?.name.toLowerCase() === 'kim'
 
   if (!product) {
     return (
@@ -25,8 +35,20 @@ const Product = () => {
         ← Back
       </button>
       <div className="product-detail">
-        <div className="product-detail__image">
-          <img src={product.image} alt={product.name} />
+        <div>
+          <div className="product-detail__image">
+            <img
+              className={isKim ? 'product-detail__image-item product-detail__image-item--kim' : 'product-detail__image-item'}
+              src={product.image}
+              alt={product.name}
+            />
+          </div>
+          {detailVideoSrc ? (
+            <video className="product-detail__video" controls preload="metadata">
+              <source src={detailVideoSrc} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          ) : null}
         </div>
         <div className="product-detail__content">
           <Link to="/shop" className="text-link">
@@ -60,16 +82,16 @@ const Product = () => {
         <p>
           {(
             {
-              Kira:
+              Mira:
                 'She is a vet and she is kind, helping, caring, and fun, and loves to help animals.',
-              Kim: 'She is kind, loves making new friends, and loves ballet.',
-              Tara:
+              katherin: 'She is kind, loves making new friends, and loves ballet.',
+              Sophia:
                 'She is funny, kind, helpful, always happy to make a new friend, loves tenis, dancing, and building legos.',
-              Bella:
+              Lana:
                 'She is kind, funny, helpful, and loves playing the piano in front of her stuffies.',
-              Anna:
+              Lisa:
                 'She is shy, kind, fun, likes theater, and loves performing her violin.',
-              Saira:
+              Annie:
                 'She is outgoing, kind, loves crafts, and loves sports.',
             } as Record<string, string>)[product.name] ??
             'A thoughtful friend with a big imagination and a heart for adventure.'}

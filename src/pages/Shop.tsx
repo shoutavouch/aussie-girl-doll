@@ -21,7 +21,14 @@ const Shop = () => {
     return true
   })
 
-  const visibleProducts = !category && !type ? filteredProducts.slice(0, 6) : filteredProducts
+  const visibleProducts = (() => {
+    if (!category && !type) return filteredProducts.slice(0, 6)
+    if (category === 'dolls' && !type) return filteredProducts.slice(0, 12)
+    if (category === 'accessories') return filteredProducts.slice(0, 6)
+    if (category === 'clothing' && type === 'everyday') return filteredProducts.slice(0, 5)
+    if (category === 'clothing') return filteredProducts.slice(0, 4)
+    return filteredProducts
+  })()
 
   const typeOptions: Record<string, { key: string; label: string }[]> = {
     dolls: [
@@ -43,6 +50,7 @@ const Shop = () => {
       { key: 'travel', label: 'Travel' },
       { key: 'play', label: 'Play' },
       { key: 'room', label: 'Room decor' },
+      { key: 'school', label: 'School supplies' },
       { key: 'pets', label: 'Pets' },
     ],
     books: [

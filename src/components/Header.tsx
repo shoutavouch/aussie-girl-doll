@@ -167,6 +167,27 @@ const Header = () => {
                     Room decor
                   </Link>
                   <Link
+                    to="/shop/accessories?type=school"
+                    className="text-link"
+                    onClick={() => setIsAccessoriesOpen(false)}
+                  >
+                    School supplies
+                  </Link>
+                  <Link
+                    to="/shop/accessories?type=little-dolls"
+                    className="text-link"
+                    onClick={() => setIsAccessoriesOpen(false)}
+                  >
+                    Little dolls
+                  </Link>
+                  <Link
+                    to="/shop/accessories?type=instruments"
+                    className="text-link"
+                    onClick={() => setIsAccessoriesOpen(false)}
+                  >
+                    Instruments
+                  </Link>
+                  <Link
                     to="/shop/accessories?type=pets"
                     className="text-link"
                     onClick={() => setIsAccessoriesOpen(false)}
