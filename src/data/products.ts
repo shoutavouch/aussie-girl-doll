@@ -26,6 +26,7 @@ export type Product = {
     | 'room'
     | 'school'
     | 'little-dolls'
+    | 'instruments'
     | 'pets'
     | 'story'
     | 'activity'
