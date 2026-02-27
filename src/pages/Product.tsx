@@ -18,6 +18,8 @@ const Product = () => {
   }
   const detailVideoSrc = product ? detailVideoByName[product.name.toLowerCase()] : undefined
   const isKim = product?.name.toLowerCase() === 'kim'
+  const productImageSrc = product && product.category === 'dolls' ? `${cloudfrontUrl}${product.image.toLowerCase()}` : product?.image
+  console.log('productImageSrc', productImageSrc)
 
   if (!product) {
     return (
@@ -40,7 +42,7 @@ const Product = () => {
           <div className="product-detail__image">
             <img
               className={isKim ? 'product-detail__image-item product-detail__image-item--kim' : 'product-detail__image-item'}
-              src={product.image}
+              src={productImageSrc}
               alt={product.name}
             />
           </div>
