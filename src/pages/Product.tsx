@@ -7,13 +7,14 @@ const Product = () => {
   const product = products.find((item) => item.slug === slug)
   const { addItem } = useCart()
   const navigate = useNavigate()
+  const cloudfrontUrl = 'https://d14s99kolgjoai.cloudfront.net'
   const detailVideoByName: Record<string, string> = {
-    kira: '/videos/kira.mp4',
-    kim: '/videos/kim.mp4',
-    tara: '/videos/Tara.mp4',
-    bella: '/videos/Bella.mp4',
-    anna: '/videos/Anna.mp4',
-    saira: '/videos/Saira.mp4',
+    kira: `${cloudfrontUrl}/kira.mp4`,
+    kim: `${cloudfrontUrl}/kim.mp4`,
+    tara: `${cloudfrontUrl}/Tara.mp4`,
+    bella: `${cloudfrontUrl}/Bella.mp4`,
+    anna: `${cloudfrontUrl}/Anna.mp4`,
+    saira: `${cloudfrontUrl}/Saira.mp4`,
   }
   const detailVideoSrc = product ? detailVideoByName[product.name.toLowerCase()] : undefined
   const isKim = product?.name.toLowerCase() === 'kim'
