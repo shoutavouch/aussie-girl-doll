@@ -5,6 +5,11 @@ import { useCart } from '../context/CartContext'
 const ProductCard = ({ product }: { product: Product }) => {
   const { addItem } = useCart()
   const navigate = useNavigate()
+  const cloudfrontUrl = 'https://d14s99kolgjoai.cloudfront.net'
+  const productImageSrc =
+    product.category === 'dolls'
+      ? `${cloudfrontUrl}${product.image.toLowerCase()}`
+      : product.image
 
   return (
     <article className="product-card">
@@ -21,7 +26,7 @@ const ProductCard = ({ product }: { product: Product }) => {
             }
           }}
         >
-          <img src={product.image} alt={product.name} loading="lazy" />
+          <img src={productImageSrc} alt={product.name} loading="lazy" />
           {product.badge ? <span className="badge">{product.badge}</span> : null}
         </div>
         <p className="product-card__name">{product.name}</p>
