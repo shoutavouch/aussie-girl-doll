@@ -3,6 +3,7 @@ frontend:
   phases:
     preBuild:
       commands:
+        - envCache --set stackInfo ""
         - npm ci
     build:
       commands:
@@ -14,3 +15,4 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
+      - !public/videos/**/*
